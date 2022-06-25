@@ -29,6 +29,3 @@ var trackTimer = function () {
     })
 };
 
-
-
-}
