@@ -11,17 +11,17 @@ var trackTimer = function () {
         var blockTime = ($(this).attr("id"));
 
         //less than or greater than the current time
-        if (blockTime < currentTime) {          // ...if the block is less than the current time; color will change to gray
+        if (blockTime < currentTime) {          //  color will change to gray
             $(this).removeClass("future");
             $(this).removeClass("present");
             $(this).addClass("past");
         }
-        else if (blockTime > currentTime) {    // ...if the block is greater than the current time; color will change to green
+        else if (blockTime > currentTime) {    //  color will change to green
             $(this).removeClass("present");
             $(this).removeClass("past");
             $(this).addClass("future");
         }
-        else {                                // ...otherwise, currentTime is present; change color to red
+        else {                                // change color to red
             $(this).removeClass("past");
             $(this).removeClass("future");
             $(this).addClass("present");
@@ -29,3 +29,25 @@ var trackTimer = function () {
     })
 };
 
+// save to localStorage; Key(timeKey) Value(descriptionVal)
+localStorage.setItem(timeKey, descriptionVal);
+
+//key value pairs from localStorage
+$("#9").val(localStorage.getItem("9"));
+$("#10").val(localStorage.getItem("10"));
+$("#11").val(localStorage.getItem("11"));
+$("#12").val(localStorage.getItem("12"));
+$("#01").val(localStorage.getItem("01"));
+$("#02").val(localStorage.getItem("02"));
+$("#03").val(localStorage.getItem("03"));
+$("#04").val(localStorage.getItem("04"));
+$("#05").val(localStorage.getItem("05"));
+
+//save button 
+$(".saveBtn").on("click", function() { 
+    var timeKey = $(this).siblings(".description").attr("id");
+    var descriptionVal = $(this).siblings(".description").val();
+
+}
+
+timeTracker();
