@@ -33,10 +33,10 @@ var trackTimer = function () {
 $(".saveBtn").on("click", function() { 
     var timeKey = $(this).siblings(".description").attr("id");
     var descriptionVal = $(this).siblings(".description").val();
-    
+
 
     // save to localStorage; Key(timeKey) Value(descriptionVal)
-localStorage.setItem(timeKey, descriptionVal);
+    localStorage.setItem(timeKey, descriptionVal);
 })
 
 
