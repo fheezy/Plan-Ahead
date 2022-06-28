@@ -29,8 +29,16 @@ var trackTimer = function () {
     })
 };
 
-// save to localStorage; Key(timeKey) Value(descriptionVal)
+//save button 
+$(".saveBtn").on("click", function() { 
+    var timeKey = $(this).siblings(".description").attr("id");
+    var descriptionVal = $(this).siblings(".description").val();
+    
+
+    // save to localStorage; Key(timeKey) Value(descriptionVal)
 localStorage.setItem(timeKey, descriptionVal);
+})
+
 
 //key value pairs from localStorage
 $("#9").val(localStorage.getItem("9"));
@@ -43,11 +51,5 @@ $("#03").val(localStorage.getItem("03"));
 $("#04").val(localStorage.getItem("04"));
 $("#05").val(localStorage.getItem("05"));
 
-//save button 
-$(".saveBtn").on("click", function() { 
-    var timeKey = $(this).siblings(".description").attr("id");
-    var descriptionVal = $(this).siblings(".description").val();
-
-}
 
 timeTracker();
