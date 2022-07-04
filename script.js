@@ -1,6 +1,4 @@
 // The current day is going to display on top/middle of the calender 
-// let todayDate = moment().format('MMMM D, YYYY');
-// $("#currentDay").html(todayDate);
 let today = new Date().toLocaleDateString()
 
 console.log(today)
@@ -34,11 +32,11 @@ var trackTimer = function () {
 //save button 
 $(".saveBtn").on("click", function() { 
     var timeKey = $(this).siblings(".description").attr("id");
-    var descriptionVal = $(this).siblings(".description").val();
+    var descriptionValue = $(this).siblings(".description").val();
 
 
     // save to localStorage; Key(timeKey) Value(descriptionVal)
-    localStorage.setItem(timeKey, descriptionVal);
+    localStorage.setItem(timeKey, descriptionValue);
 })
 
 
