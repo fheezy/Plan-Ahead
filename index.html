@@ -27,7 +27,14 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead">1 July, 2022</p>
+      <p id="today" class="lead"></p>
+      <!--sourced from https://www.delftstack.com/howto/html/html-todays-date/#:~:text=date%20in%20HTML.-,Use%20the%20JavaScript%20Date()%20Function%20to%20Get%20the%20Current,date%20in%20it%20using%20JavaScript.-->
+      <div>
+        <script>
+        date = new Date().toLocaleDateString();
+        document.write(date);
+        </script>
+        </div>
     </header>
     <div class="container">
       <!-- Timeblocks go here -->

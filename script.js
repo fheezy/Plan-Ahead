@@ -1,7 +1,9 @@
 // The current day is going to display on top/middle of the calender 
-let todayDate = moment().format('MMMM D, YYYY');
-$("#currentDay").html(todayDate);
+// let todayDate = moment().format('MMMM D, YYYY');
+// $("#currentDay").html(todayDate);
+let today = new Date().toLocaleDateString()
 
+console.log(today)
 //section where depending on the time it will change colors for each block section(past,present, and future)
 var trackTimer = function () {
     //current time 
