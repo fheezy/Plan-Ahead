@@ -29,10 +29,10 @@ var trackTimer = function () {
     })
 };
 
-//save button 
-$("saveBtn").on("click", function() { 
+// save button 
+ $("saveBtn").on("click", function() { 
     var timeKey = $(this).siblings(".description").attr("id");
-    var descriptionValue = $(this).siblings(".description").val();
+    var descriptionValue = $(this).siblings(".description").value();
 
 
     // save to localStorage; Key(timeKey) Value(descriptionVal)
@@ -41,15 +41,15 @@ $("saveBtn").on("click", function() {
 
 
 //key value pairs from localStorage
-$("#9").val(localStorage.getItem("9"));
-$("#10").val(localStorage.getItem("10"));
-$("#11").val(localStorage.getItem("11"));
-$("#12").val(localStorage.getItem("12"));
-$("#01").val(localStorage.getItem("01"));
-$("#02").val(localStorage.getItem("02"));
-$("#03").val(localStorage.getItem("03"));
-$("#04").val(localStorage.getItem("04"));
-$("#05").val(localStorage.getItem("05"));
+$("#9").value(localStorage.getItem("9"));
+$("#10").value(localStorage.getItem("10"));
+$("#11").value(localStorage.getItem("11"));
+$("#12").value(localStorage.getItem("12"));
+$("#01").value(localStorage.getItem("01"));
+$("#02").value(localStorage.getItem("02"));
+$("#03").value(localStorage.getItem("03"));
+$("#04").value(localStorage.getItem("04"));
+$("#05").value(localStorage.getItem("05"));
 
 
-timeTracker(timeKey);
+timeTracker(timekey);
