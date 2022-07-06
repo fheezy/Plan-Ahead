@@ -30,7 +30,7 @@ var trackTimer = function () {
 };
 
 // save button 
- $("saveBtn").on("click", function() { 
+ $(".saveBtn").on("click", function() { 
     var timeKey = $(this).siblings(".description").attr("id");
     var descriptionValue = $(this).siblings(".description").value();
 
@@ -52,4 +52,4 @@ $("#04").value(localStorage.getItem("04"));
 $("#05").value(localStorage.getItem("05"));
 
 
-timeTracker(timekey);
+timeTracker();
