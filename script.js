@@ -70,3 +70,4 @@ $("#03").value(localStorage.getItem("03"));
 $("#04").value(localStorage.getItem("04"));
 $("#05").value(localStorage.getItem("05"));
 
+}
