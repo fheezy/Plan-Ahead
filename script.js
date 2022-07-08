@@ -1,33 +1,53 @@
 // The current day is going to display on top/middle of the calender 
 let today = new Date().toLocaleDateString()
 
-console.log(today)
+// console.log(today)
 //section where depending on the time it will change colors for each block section(past,present, and future)
-var trackTimer = function () {
+var timeTracker = function () {
     //current time 
-    var currentTime = moment().hour();
-    
-    $(".description").each(function () {
-        var blockTime = ($(this).attr("id"));
+    // var currentTime = moment().hour();
+    console.log(currentTime) = moment().hour();
 
-        //less than or greater than the current time
-        if (blockTime < currentTime) {          //  color will change to gray
-            $(this).removeClass("future");
-            $(this).removeClass("present");
+    $(".blockTime").each(function() {
+        var currentTime = moment().hours();
+    
+        var blockTime = parseInt($(this).attr("id"));
+    
+        if (blockTime < currentTime) {
             $(this).addClass("past");
-        }
-        else if (blockTime > currentTime) {    //  color will change to green
-            $(this).removeClass("present");
+    
+        } else if(blockTime === currentTime) {
             $(this).removeClass("past");
+            $(this).addClass("present");
+    
+        }  else {
+            $(this).removeClass("past present");
             $(this).addClass("future");
         }
-        else {                                // change color to red
-            $(this).removeClass("past");
-            $(this).removeClass("future");
-            $(this).addClass("present");
-        }
     })
-};
+    
+//     $(".description").each(function () {
+//         // var blockTime = ($(this).attr("id"));
+//         console.log(blockTime) = ($(this).attr("id"));
+
+//         //less than or greater than the current time
+//         if (blockTime < currentTime) {          //  color will change to gray
+//             $(this).removeClass("future");
+//             $(this).removeClass("present");
+//             $(this).addClass("past");
+//         }
+//         else if (blockTime > currentTime) {    //  color will change to green
+//             $(this).removeClass("present");
+//             $(this).removeClass("past");
+//             $(this).addClass("future");
+//         }
+//         else {                                // change color to red
+//             $(this).removeClass("past");
+//             $(this).removeClass("future");
+//             $(this).addClass("present");
+//         }
+//     })
+// };
 
 // save button 
  $(".saveBtn").on("click", function() { 
@@ -38,7 +58,6 @@ var trackTimer = function () {
     // save to localStorage; Key(timeKey) Value(descriptionVal)
     localStorage.setItem(timeKey, descriptionValue);
 })
-
 
 //key value pairs from localStorage
 $("#9").value(localStorage.getItem("9"));
@@ -51,5 +70,3 @@ $("#03").value(localStorage.getItem("03"));
 $("#04").value(localStorage.getItem("04"));
 $("#05").value(localStorage.getItem("05"));
 
-
-timeTracker();
