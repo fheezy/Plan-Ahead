@@ -19,3 +19,16 @@ List of languages used for this project:
 - Jquery/Moment.js
 - Javascript 
 
+## Usage 
+
+[Mockup](./Mockup.png)
+
+## Installation
+
+refatored the code from github then i cloned the code into VS studio, 
+
+## Credits 
+
+Visit my [GitHub](https://github.com/fheezy) if interested to see more! 
+
+## 

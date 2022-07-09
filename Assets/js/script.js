@@ -5,46 +5,51 @@ let today = new Date().toLocaleDateString()
 var timeTracker = function () {
     //current time 
    
-    console.log(currentTime) = moment().hour();
-
-    $(".blockTime").each(function() {
-        var currentTime = moment().hours();
+        var currentTime = moment().hour();
     
-        var blockTime = parseInt($(this).attr("id"));
-    
-        if (blockTime < currentTime) {
-            $(this).addClass("past");
-    
-        } else if(blockTime === currentTime) {
-            $(this).removeClass("past");
-            $(this).addClass("present");
-    
-        }  else {
-            $(this).removeClass("past present");
-            $(this).addClass("future");
-        }
-    })
-    
+console.log(currentTime)
+$(".description").each(function () {
+            var blockTime = ($(this).attr("id"));
+            console.log(blockTime) 
+  
+            // less than or greater than the current time
+            if (blockTime < currentTime) {          //  color will change to gray
+                $(this).removeClass("future");
+                $(this).removeClass("present");
+                $(this).addClass("past");
+            }
+            else if (blockTime > currentTime) {    //  color will change to green
+                $(this).removeClass("present");
+                $(this).removeClass("past");
+                $(this).addClass("future");
+            }
+            else {                                // change color to red
+                $(this).removeClass("past");
+                $(this).removeClass("future");
+                $(this).addClass("present");
+            }
+        })
+    };
 
 // save button 
  $(".saveBtn").on("click", function() { 
     var timeKey = $(this).siblings(".description").attr("id");
-    var descriptionValue = $(this).siblings(".description").value();
+    var descriptionValue = $(this).siblings(".description").val();
 
-
+console.log(descriptionValue)
     // save to localStorage; Key(timeKey) Value(descriptionVal)
     localStorage.setItem(timeKey, descriptionValue);
 })
 
 //key value pairs from localStorage
-$("#9").value(localStorage.getItem("9"));
-$("#10").value(localStorage.getItem("10"));
-$("#11").value(localStorage.getItem("11"));
-$("#12").value(localStorage.getItem("12"));
-$("#01").value(localStorage.getItem("01"));
-$("#02").value(localStorage.getItem("02"));
-$("#03").value(localStorage.getItem("03"));
-$("#04").value(localStorage.getItem("04"));
-$("#05").value(localStorage.getItem("05"));
+$("#9").val(localStorage.getItem("9"));
+$("#10").val(localStorage.getItem("10"));
+$("#11").val(localStorage.getItem("11"));
+$("#12").val(localStorage.getItem("12"));
+$("#13").val(localStorage.getItem("13"));
+$("#14").val(localStorage.getItem("14"));
+$("#15").val(localStorage.getItem("15"));
+$("#16").val(localStorage.getItem("16"));
+$("#17").val(localStorage.getItem("17"));
 
-} 
+timeTracker()
