@@ -11,4 +11,11 @@ I WANT to add important events to a daily planner
 SO THAT I can manage my time effectively
 ```
 
-### MOCK UP
+## Languages 
+
+List of languages used for this project:
+- HTML
+- CSS 
+- Jquery/Moment.js
+- Javascript 
+
